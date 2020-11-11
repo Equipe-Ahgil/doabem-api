@@ -11,7 +11,7 @@ routes(app)
 
 app.route('/')
   .get((req, res) => {
-    res.send('API  funcionando!');
+    res.send('Aplicação Funcionando');
   }
 )
 
