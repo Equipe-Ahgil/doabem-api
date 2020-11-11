@@ -1,12 +1,22 @@
-const express = require('express');
-const app = express();
+const express = require('express')
+const bodyParser = require('body-parser')
 
-const port = process.env.PORT || 3000
+const app = express()
 
- app.get('/', (req, res) => {
-   res.send('Hello World!')
- });
- 
- app.listen(port, () => {
-   console.log(`Servidor Funcionando http://localhost:${port}`)
- })
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+
+const routes = require('./src/routes/usuarioRoutes.js')
+routes(app)
+
+app.route('/')
+  .get((req, res) => {
+    res.send('API  funcionando!');
+  }
+)
+
+const port = process.env.PORT || 3000;
+app.listen(port);
+console.log('Servidor funcionando na porta:' ,port);
+
+
