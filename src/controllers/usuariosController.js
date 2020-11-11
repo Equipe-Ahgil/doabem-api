@@ -7,3 +7,11 @@ exports.listAll = (req, res) => {
     ]
     res.send(usuarios)
 }
+
+exports.createOne = (req, res) => {
+    let response = {
+        message : 'Usuario Criado',
+        data: req.body
+    }
+    res.send(response)
+}
