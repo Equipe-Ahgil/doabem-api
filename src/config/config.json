@@ -1,14 +1,29 @@
 {
   "development": {
     "storage": "./database.sqlite3",
-    "dialect": "sqlite"
+    "dialect": "sqlite",
+    "define": {
+      "timestamps": true,
+      "underscored": true,
+      "freezeTableName": true
+    }
   },
   "test": {
     "storage": "./database.sqlite3",
-    "dialect": "sqlite"
+    "dialect": "sqlite",
+    "define": {
+      "timestamps": true,
+      "underscored": true,
+      "freezeTableName": true
+    }
   },
   "production": {
     "storage": "./database.sqlite3",
-    "dialect": "sqlite"
+    "dialect": "sqlite",
+    "define": {
+      "timestamps": true,
+      "underscored": true,
+      "freezeTableName": true
+    }
   }
 }
