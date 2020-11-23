@@ -9,7 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       id_categoria: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        reference: {
+          model: 'categoria',
+          key: 'id'
+        }
       },
       descricao: {
         type: Sequelize.STRING(30)

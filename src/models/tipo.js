@@ -11,6 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      tipo.belongsTo(models.categoria, {
+        foreignKey: 'id_categoria'
+      })
+      tipo.hasMany(models.item)
+      tipo.hasMany(models.necessita)
     }
   };
   tipo.init({

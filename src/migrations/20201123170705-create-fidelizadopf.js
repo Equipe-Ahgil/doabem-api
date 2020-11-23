@@ -1,26 +1,37 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('necessita', {
+    await queryInterface.createTable('fidelizadopfs', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id_beneficiario: {
+      cpf: {
+        type: Sequelize.CHAR(11)
+      },
+      id_doador: {
         type: Sequelize.INTEGER,
         reference: {
-          model: 'beneficiario',
+          model: 'doador',
           key: 'id'
         }
       },
-      id_tipo: {
-        type: Sequelize.INTEGER,
-        reference: {
-          model: 'tipos',
-          key: 'id'
-        }
+      nome: {
+        type: Sequelize.STRING(50)
+      },
+      data_nascimento: {
+        type: Sequelize.DATE
+      },
+      sexo: {
+        type: Sequelize.CHAR(1)
+      },
+      rg: {
+        type: Sequelize.STRING(10)
+      },
+      org_expedidor: {
+        type: Sequelize.STRING(10)
       },
       createdAt: {
         allowNull: false,
@@ -33,6 +44,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('necessita');
+    await queryInterface.dropTable('fidelizadopfs');
   }
 };

@@ -9,10 +9,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       id_doacao: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        reference: {
+          model: 'doacao',
+          key: 'id'
+        }
       },
       id_tipo: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        reference: {
+          model: 'tipo',
+          key: 'id'
+        }
       },
       quantidade: {
         type: Sequelize.INTEGER

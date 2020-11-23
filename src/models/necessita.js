@@ -11,6 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      necessita.belongsTo(models.tipo, {
+        foreignKey: 'id_tipo'
+      })
+      necessita.belongsTo(models.beneficiario, {
+        foreignKey: 'id_beneficiario'
+      })
     }
   };
   necessita.init({
