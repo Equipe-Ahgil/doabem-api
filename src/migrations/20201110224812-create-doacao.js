@@ -10,9 +10,10 @@ module.exports = {
       },
       id_doador: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         reference: {
           model:'doador',
-          key: 'id'
+          key: 'id_doador'
         }
       },
       descricao: {
