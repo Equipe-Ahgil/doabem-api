@@ -9,14 +9,16 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-const routes = require('../src/routes/usuario-routes')
+require('../src/routes/usuario-routes')(app)
+app.get('*', (req, res) => res.status(200).send({
+    message: 'O início'
+}))
+// routes(app)
 
-routes(app)
-
-app.route('/')
-    .get((req, res) => {
-        res.send('API DoaBem')
-    })
+// app.route('/')
+//     .get((req, res) => {
+//         res.send('API DoaBem')
+//     })
 
 const usuarios = require('./routes/usuario-routes')
     
